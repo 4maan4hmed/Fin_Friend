@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../providers/finance_data_provider.dart';
 import '../widgets/finance/daily_change_card.dart';
 import '../widgets/finance/header_section.dart';

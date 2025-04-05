@@ -56,7 +56,8 @@ class _AuthScreenState extends State<AuthScreen> {
     final email = _emailController.text.trim();
     final password = _passwordController.text.trim();
 
-    print("Attempting to ${_isLogin ? 'log in' : 'sign up'} with Email: $email");
+    print(
+        "Attempting to ${_isLogin ? 'log in' : 'sign up'} with Email: $email");
 
     if (email.isEmpty || password.isEmpty) {
       setState(() {

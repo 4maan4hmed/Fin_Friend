@@ -1,3 +1,4 @@
+import 'package:fintech_app/widgets/finance/company_tile.dart';
 import 'package:flutter/material.dart';
 
 import '../models/news_item.dart';
@@ -6,6 +7,10 @@ import '../models/stock_item.dart';
 class FinanceDataProvider with ChangeNotifier {
   String _username = "Amaan";
   double _totalChange = -13.2;
+
+  // Add this line to define the _selectedCompanies property
+  List<CompanyData> _selectedCompanies = [];
+
   List<StockItem> _stocks = [
     StockItem(
       symbol: 'NFLX',
@@ -42,6 +47,9 @@ class FinanceDataProvider with ChangeNotifier {
   List<StockItem> get stocks => _stocks;
   NewsItem get featuredNews => _featuredNews;
 
+  // Add a getter for selectedCompanies
+  List<CompanyData> get selectedCompanies => _selectedCompanies;
+
   void updateUsername(String name) {
     _username = name;
     notifyListeners();
@@ -59,6 +67,11 @@ class FinanceDataProvider with ChangeNotifier {
 
   void updateFeaturedNews(NewsItem news) {
     _featuredNews = news;
+    notifyListeners();
+  }
+
+  void setSelectedCompanies(List<CompanyData> companies) {
+    _selectedCompanies = companies;
     notifyListeners();
   }
 }
